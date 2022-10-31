@@ -1,0 +1,26 @@
+<h1>Todo List <small class="h5">({{ todoList.length }})</small></h1>
+<hr>
+<button class="btn btn-primary" (click)="createNewTodo()">Create Todo</button>
+<br><br>
+<table class="table table-sm table-striped" *ngIf="todoList.length > 0">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Todo</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of todoList">
+            <td>{{ todo.id }}</td>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.dueDate }}</td>
+            <td>
+                <button class="btn btn-secondary" (click)="editTodo(todo)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>    
+<app-edit [show]="showEditComponent" [todo]="todoToEdit" (todosUpdated)="getTodoList()" (toggleShow)="toggleShowEditComponent()"></app-edit>

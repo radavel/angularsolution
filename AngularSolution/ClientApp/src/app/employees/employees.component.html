@@ -1,0 +1,31 @@
+<h3>Employee List <small>({{ employeeList.length }})</small></h3>
+<br>
+<button class="btn btn-primary" (click)="createEmployee()">Create</button>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Position</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employeeList">
+            <td>{{ employee.Id }}</td>
+            <td>{{ employee.Name }}</td>
+            <td>{{ employee.Lastname }}</td>
+            <td>{{ employee.Email }}</td>
+            <td>{{ employee.Age }}</td>
+            <td>{{ employee.Position }}</td>
+            <td>
+                <button class="btn btn-secondary" (click)="updateEmployee(employee)"></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br><br>

@@ -11,4 +11,5 @@ public class DatabaseContext : DbContext
     }
 
     public DbSet<Todo> todos => Set<Todo>();
+    public DbSet<Employee> employees => Set<Employee>();
 }

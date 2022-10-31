@@ -1,4 +1,4 @@
-# Postgres Web Api
+# Angular Solution
 
 ## Pre-requisites
 ### Set up Postges SQL

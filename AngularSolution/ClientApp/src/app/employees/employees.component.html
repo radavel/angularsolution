@@ -2,7 +2,7 @@
 <br>
 <button class="btn btn-primary" (click)="createEmployee()">Create</button>
 <br>
-<table>
+<table *ngIf="employeeList.length > 0" class="table table-striped">
     <thead>
         <tr>
             <th>#</th>
@@ -16,16 +16,17 @@
     </thead>
     <tbody>
         <tr *ngFor="let employee of employeeList">
-            <td>{{ employee.Id }}</td>
-            <td>{{ employee.Name }}</td>
-            <td>{{ employee.Lastname }}</td>
-            <td>{{ employee.Email }}</td>
-            <td>{{ employee.Age }}</td>
-            <td>{{ employee.Position }}</td>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.lastname }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.age }}</td>
+            <td>{{ employee.position }}</td>
             <td>
-                <button class="btn btn-secondary" (click)="updateEmployee(employee)"></button>
+                <button class="btn btn-secondary" (click)="updateEmployee(employee)">Edit</button>
             </td>
         </tr>
     </tbody>
 </table>
 <br><br>
+<app-edit-employee [show]="showEditEmployee" [employee]="employeeToEdit" (employeeUpdated)="getEmployeeList()" (toggleEditEmployee)="toggleEditEmployee()"></app-edit-employee>

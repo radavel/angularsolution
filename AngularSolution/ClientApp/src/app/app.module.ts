@@ -11,6 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TodosComponent } from './todos/todos.component';
 import { EditComponent } from './todos/edit/edit.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { EditEmployeeComponent } from './employees/edit-employee/edit-employee.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { EditComponent } from './todos/edit/edit.component';
     CounterComponent,
     FetchDataComponent,
     TodosComponent,
-    EditComponent
+    EditComponent,
+    EmployeesComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +32,8 @@ import { EditComponent } from './todos/edit/edit.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', redirectTo: '/todos', pathMatch: 'full' },
-      { path: 'todos', component: TodosComponent }
+      { path: 'todos', component: TodosComponent },
+      { path: 'employees', component: EmployeesComponent },
     ]),
   ],
   providers: [],

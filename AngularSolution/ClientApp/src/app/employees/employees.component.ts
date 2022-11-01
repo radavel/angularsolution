@@ -5,7 +5,6 @@ import { EmployeeService } from './employee.service';
 @Component({
   selector: 'app-employees',
   templateUrl: './employees.component.html',
-  styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
 
@@ -27,11 +26,13 @@ export class EmployeesComponent implements OnInit {
   createEmployee() 
   {
     this.employeeToEdit = new Employee();
+    this.showEditEmployee = true;
   }
-
+  
   updateEmployee(employee: Employee)
   {
     this.employeeToEdit = employee;
+    this.showEditEmployee = true;
   }
 
   toggleEditEmployee()

@@ -86,10 +86,18 @@ describe('EmployeesComponent', () => {
     component.createEmployee();
     expect(component.showEditEmployee).toBeTrue();
   });
-
+  
   it ('#updateEmployee() should to toggle showEditEmployee to true', () => {
     expect(component.showEditEmployee).toBeFalse();
     component.createEmployee();
     expect(component.showEditEmployee).toBeTrue();
+  });
+
+  it ('#toggleEditEmployee() should to toggle showEditEmployee', () => {
+    expect(component.showEditEmployee).toBeFalse();
+    component.toggleEditEmployee();
+    expect(component.showEditEmployee).toBeTrue();
+    component.toggleEditEmployee();
+    expect(component.showEditEmployee).toBeFalse();
   });
 });

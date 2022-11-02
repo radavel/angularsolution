@@ -33,6 +33,7 @@ In order to create your db and tables we need to run the migrations. Run the com
 <code>dotnet build</code>
 
 <code>dotnet ef database update</code>
+Note: if there are others migrations to syncronize just run the above command
 
 <hr>
 
